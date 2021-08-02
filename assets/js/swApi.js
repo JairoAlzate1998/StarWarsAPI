@@ -36,13 +36,21 @@ const pokeData = (data) => {
 
 // Dibujar cards de Pokemons
 const llenarDatos = (data, html, name, height, mass, gender) => {
+  let genero = "";
   html += '<div class="col mt-5">';
-  html += '<div class="card" style="width: 15rem;">';
+  html += '<div class="card" style="width: 18rem;">';
   html += '<div class="card-body">';
   html += `<h5 class="card-title">Nombre: ${name}</h5>`;
   html += `<h5 class="card-title">Altura: ${height}</h5>`;
   html += `<h5 class="card-title">Masa: ${mass}</h5>`;
-  html += `<h5 class="card-title">Genero: ${gender}</h5>`;
+  if(gender === "male"){
+    genero = "Masculino";
+  } else if(gender === "female"){
+    genero = "Femenino";
+  } else {
+    genero = "Desconocido";
+  }
+  html += `<h5 class="card-title">Genero: ${genero}</h5>`;
   html += `<h5 class="card-title">Planeta Origen: ${data.name}</h5>`;
   html += "</div>";
   html += "</div>";
